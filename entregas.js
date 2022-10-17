@@ -4,17 +4,20 @@ function preguntaInicial(){
     while(bannerPregunta){
         let pregunta = prompt(`Bienvenidos a MS Nail Art!
         ¿Desea adquirir nuestros servicios?`).toLowerCase()
-        if(pregunta == "si"){
+            if(pregunta == "si"){
             bannerPregunta = false
             mostrarLista()
+            console.log(mostrarLista)
         }else if(pregunta == "no"){
             bannerPregunta = false
             alert("Gracias por usar nuestra página.")
+            console.log("Gracias por usar nuestra página.")
         }else{
             alert("Porfavor responde si/no")
         }
     }
 }
+
 
 function mostrarLista(){
     const precioS1 = 700
@@ -35,46 +38,54 @@ function mostrarLista(){
         4. Servicio de Esculpidas Básicas. $${precioS4}
         5. Servicio de Esculpidas con semipermante. $${precioS5}
         6. Servicio de remoción. $${precioS6}
-        0. No deseo adquirir otro servicio.`))
+        7. No deseo adquirir otro servicio.`))
         switch(lista){
             case 1:
             alert("Servicio de Esmaltado Simple al carrito")
-            cantidadServicios += `Servicio de Esmaltado Simple `
+            cantidadServicios += `Servicio de Esmaltado Simple
+            `
             carrito += precioS1
             break;
             case 2:
             alert("Servicio de capping gel con Semipermante agregado al carrito")
-            cantidadServicios += `ervicio de capping gel con Semipermante `
+            cantidadServicios += `Servicio de capping gel con Semipermante 
+            `
             carrito += precioS2
             break;
             case 3:
             alert("Servicio de Esmaltado Semipermante agregado al carrito")
-            cantidadServicios += `Servicio de Esmaltado Semipermante `
+            cantidadServicios += `Servicio de Esmaltado Semipermante 
+            `
             carrito += precioS3
             break;
             case 4:
             alert("Servicio de Esculpidas Básicas agregado al carrito")
-            cantidadServicios += `Servicio de Esculpidas Básicas`
+            cantidadServicios += `Servicio de Esculpidas Básicas
+            `
             carrito += precioS4
             break;
             case 5:
             alert("Servicio de Esculpidas con semipermante agregado al carrito")
-            cantidadServicios += `Servicio de Esculpidas con semipermante `
+            cantidadServicios += `Servicio de Esculpidas con semipermante 
+            `
             carrito += precioS5
             break;
             case 6:
             alert("Servicio de remoción agregado al carrito")
-            cantidadServicios += `Servicio de remoción`
+            cantidadServicios += `Servicio de remoción
+            `
             carrito += precioS6
             break;
-            case 0:
+            case 7:
             bannerPregunta = false
                 if(carrito != 0){
-                    alert(`El total de su compra es de $${carrito}, llevando los siguientes servicios:
+                    alert(`Usted a adquirido los siguientes servicios:
                     ${cantidadServicios} 
-                    Gracias por su visita!`)
+                    Su total  es de $${carrito}
+                    Gracias por usar nuestra página
+                    Lo esperamos en el local!`)
                 }else{
-                    alert(`Usted no agregó productos al carrito.`)
+                    alert(`Usted no agrego ningún servicio al carrito.`)
                 }
             break;
             default:
@@ -83,3 +94,4 @@ function mostrarLista(){
 
     }
 }
+
