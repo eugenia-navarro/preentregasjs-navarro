@@ -6,8 +6,7 @@ function preguntaInicial(){
         ¿Desea adquirir nuestros servicios?`).toLowerCase()
             if(pregunta == "si"){
             bannerPregunta = false
-            mostrarLista()
-            console.log(mostrarLista)
+            mostrarLista()            
         }else if(pregunta == "no"){
             bannerPregunta = false
             alert("Gracias por usar nuestra página.")
